@@ -12,7 +12,7 @@ describe "User Stories" do
 
   When(:result) { system "ruby -Ilib bin/ocr <#{input_file_name} >#{output_file_name}" }
 
-  Invariant { result.should be_true }
+  Invariant { result.should be(true) }
   Invariant { contents_of(output_file_name).should == contents_of(answer_file_name) }
 
   context "#1" do
